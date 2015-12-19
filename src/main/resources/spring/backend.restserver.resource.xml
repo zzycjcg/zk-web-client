@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd "
+	default-lazy-init="true">
+
+	<bean id="foundation.restserver.resource" class="org.springframework.beans.factory.config.SetFactoryBean">
+		<property name="targetSetClass" value="java.util.LinkedHashSet" />
+		<property name="sourceSet">
+			<list>
+				<ref bean="backend.resource.ExceptionMapper" />
+				<ref bean="backend.resource.ZKClientResource" />
+				<ref bean="backend.resource.ZKServerManageResource" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="backend.resource.ExceptionMapper"
+		class="com.github.zzycjcg.zk.web.client.exception.DefaultExceptionMapper" />
+
+	<!-- 系统资源 -->
+	<bean id="backend.resource.ZKClientResource"
+		class="com.github.zzycjcg.zk.web.client.resource.impl.ZKClientResourceImpl">
+		<property name="zkServerManager" ref="backend.service.ZKServerManager" />
+	</bean>
+
+	<!-- 用户资源 -->
+	<bean id="backend.resource.ZKServerManageResource"
+		class="com.github.zzycjcg.zk.web.client.resource.impl.ZKServerManageResourceImpl">
+		<property name="zkServerManager" ref="backend.service.ZKServerManager" />
+	</bean>
+</beans>
