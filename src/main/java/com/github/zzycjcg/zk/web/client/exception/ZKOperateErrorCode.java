@@ -28,13 +28,4 @@ public interface ZKOperateErrorCode
     
     /** 操作异常：没有可用的zk客户端. */
     String E2001 = "2001";
-    
-    /** The E0004. */
-    String E0004 = "0004";
-    
-    /** The E0005. */
-    String E0005 = "0005";
-    
-    /** The E0006. */
-    String E0006 = "0006";
 }
