@@ -38,7 +38,7 @@ public class DefaultExceptionMapper implements ExceptionMapper<Throwable>
         
         if (e instanceof ZKOperateException)
         {
-            Response.ok(new IResponse()
+            return Response.ok(new IResponse()
             {
                 @Override
                 public String getErrorMessage()

@@ -40,7 +40,7 @@
 	</appender>
 
 	<!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制 -->
-	<logger name="com.brave" additivity="false">
+	<logger name="com.github.zzycjcg" additivity="false">
 		<level value="WARN" />
 		<appender-ref ref="DebugAppender" />
 	</logger>
