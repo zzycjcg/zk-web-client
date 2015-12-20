@@ -28,17 +28,6 @@
 		</layout>
 	</appender>
 
-	<appender name="MybatisAppender" class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="../log/mybatis/mybatis.log" />
-		<!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
-		<param name="Append" value="true" />
-		<param name="MaxBackupIndex" value="10" />
-		<param name="MaxFileSize" value="20MB" />
-		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS}|%-5p|%t|%c|%L|%m%n" />
-		</layout>
-	</appender>
-
 	<!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制 -->
 	<logger name="com.github.zzycjcg" additivity="false">
 		<level value="WARN" />
@@ -55,16 +44,7 @@
 		<level value="WARN" />
 		<appender-ref ref="MybatisAppender" />
 	</logger>
-	<logger name="org.apache.ibatis" additivity="false">
-		<level value="WARN" />
-		<appender-ref ref="MybatisAppender" />
-		<appender-ref ref="ConsoleAppender" />
-	</logger>
-	<logger name="mybatis.mapper" additivity="false">
-		<level value="WARN" />
-		<appender-ref ref="MybatisAppender" />
-		<appender-ref ref="ConsoleAppender" />
-	</logger>
+	
 	<!-- 根logger的设置 -->
 	<root>
 		<level value="WARN" />
