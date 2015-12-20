@@ -55,11 +55,21 @@ public abstract class SessionHolder
         return request.get();
     }
     
+    /**
+     * Sets the current zk server.
+     *
+     * @param zkServerAddress the new current zk server
+     */
     public static void setCurrentZKServer(String zkServerAddress)
     {
         session.get().setAttribute("session.zk.server.addr.current", zkServerAddress);
     }
     
+    /**
+     * Gets the current zk server.
+     *
+     * @return the current zk server
+     */
     public static String getCurrentZKServer()
     {
         return (String)session.get().getAttribute("session.zk.server.addr.current");
