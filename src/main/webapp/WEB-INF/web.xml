@@ -20,7 +20,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-            classpath*:META-INF/spring/spring-beans.xml
+            classpath*:META-INF/spring/foundation-*.xml
             classpath*:spring/backend.restserver.*.xml
         </param-value>
 	</context-param>
@@ -42,10 +42,10 @@
 
 	<servlet>
 		<servlet-name>RestfulServer</servlet-name>
-		<servlet-class>com.github.zzycjcg.foundation.restserver.SpringServletContainer</servlet-class>
+		<servlet-class>com.github.zzycjcg.foundation.jersey.server.container.SpringServletContainer</servlet-class>
 		<init-param>
 			<param-name>javax.ws.rs.core.Application</param-name>
-			<param-value>foundation.restserver.ResourceConfig</param-value>
+			<param-value>foundation.jersey.server.ResourceConfig</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

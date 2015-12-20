@@ -29,8 +29,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.github.zzycjcg</groupId>
-			<artifactId>foundation</artifactId>
-			<version>0.0.2</version>
+			<artifactId>foundation-jersey-server</artifactId>
+			<version>0.0.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.curator</groupId>
